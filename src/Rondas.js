@@ -1,10 +1,15 @@
 
-const Rondas = ({tiros}) => {
+const Rondas = ({tiros, turnos}) => {
 
     return (
-        <p className = "text-white">
-            <strong>Cantidad de tiros restantes: {tiros}</strong>
-        </p>
+        <div className = "text-white mt-2">
+            <p>
+                <strong>Turnos restantes: {turnos}</strong>
+            </p>
+            <p>
+                <strong>Tiradas restantes: {tiros}</strong>
+            </p>
+        </div>
     )
 }
 

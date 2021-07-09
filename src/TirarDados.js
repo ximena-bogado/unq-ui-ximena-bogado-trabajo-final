@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import Dado from "./Dado"
 
-const TirarDados = ({onClick, tiros, dados, setDados}) => {
+const TirarDados = ({onClick, tiros, dados, setDados, setError}) => {
 
     const [selectedDados, setSelectedDados] = useState([0,1,2,3,4])
     let index = 0;
@@ -13,16 +13,19 @@ const TirarDados = ({onClick, tiros, dados, setDados}) => {
     }, [dados])
 
     const handleClick = () => {
-        if (!!tiros) {
+        console.log(selectedDados)
+        if (!!tiros && selectedDados.length > 0) {
             selectedDados.map( index => 
                 dados[index] = random(1,6)
             )
             setDados(dados)
             onClick( prevState => prevState - 1)
             setSelectedDados([])
+            setError("")
             console.log(dados)
         } else {
             console.log("no se realizo la tirada")
+            setError("No se seleccionaron dados")
         }
     }
 
@@ -35,6 +38,8 @@ const TirarDados = ({onClick, tiros, dados, setDados}) => {
         setSelectedDados( prevState => [...prevState, index])
         dados[index] = null;
         setDados(dados)
+        }else {
+            setError("Ya no quedan tiradas. Seleccione una categoria y sume los puntos")
         }
     }
 

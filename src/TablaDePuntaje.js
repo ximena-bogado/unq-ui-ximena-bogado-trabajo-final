@@ -1,5 +1,6 @@
 import React from "react";
 import Puntaje from "./Puntaje";
+import PuntajeTotal from "./PuntajeTotal";
 import './App.css';
 
 const TablaDePuntaje = ({puntajes}) => {
@@ -22,6 +23,7 @@ const TablaDePuntaje = ({puntajes}) => {
             <Puntaje name = {"Poker"} puntaje = {puntajes["poker"]}/>
             <Puntaje name = {"Full"} puntaje = {puntajes["full"]}/>
             <Puntaje name = {"Escalera"} puntaje = {puntajes["escalera"]}/>
+            <PuntajeTotal puntajes = {puntajes}/>
             </tbody>
         </table>
     )

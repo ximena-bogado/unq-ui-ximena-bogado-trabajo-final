@@ -17,7 +17,9 @@ const Poker = ({dados, setCategoria, setPuntaje}) => {
         if (esPoker()) {
             setCategoria("poker")
             setPuntaje(40)
-            console.log("se hizo el handleSelectClick")
+        } else {
+            setCategoria("poker")
+            setPuntaje(0)
         }
     }
 

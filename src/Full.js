@@ -21,7 +21,9 @@ const Full = ({dados, setCategoria, setPuntaje}) => {
         if (esFull()) {
             setCategoria("full")
             setPuntaje(30)
-            console.log("se hizo el full")
+        } else {
+            setCategoria("full")
+            setPuntaje(0)
         }
     }
 

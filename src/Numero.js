@@ -1,13 +1,14 @@
 
+
 const Numero = ({dados, setCategoria, setPuntaje, numero}) => {
 
     const handleClick = (event) => {
         event.preventDefault();
-        if (dados.includes(numero)) {
+        //if (dados.includes(numero)) {
             setCategoria(numero)
             setPuntaje(calcularPuntaje())
             console.log("se hizo el handleSelectClick")
-        }
+        //}
     }
 
     const calcularPuntaje = () => {

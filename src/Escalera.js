@@ -17,7 +17,9 @@ const Escalera = ({dados, setCategoria, setPuntaje}) => {
         if (esEscalera()) {
             setCategoria("escalera")
             setPuntaje(20)
-            console.log("se hizo el handleSelectClick")
+        } else {
+            setCategoria("escalera")
+            setPuntaje(0)
         }
     }
 
