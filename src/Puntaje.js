@@ -1,10 +1,10 @@
 
-const Puntaje = ({name}) => {
+const Puntaje = ({name, puntaje}) => {
 
     return (
         <tr className = "">
             <th scope ="row" > {name} </th>  
-            <td className ="" > 0 </td>  
+            <td className ="" > {puntaje} </td>  
         </tr>
     )
 }

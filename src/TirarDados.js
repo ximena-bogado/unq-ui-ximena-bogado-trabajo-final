@@ -1,11 +1,16 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Dado from "./Dado"
 
-const TirarDados = ({onClick, tiros}) => {
+const TirarDados = ({onClick, tiros, dados, setDados}) => {
 
-    const [dados, setDados] = useState([])
     const [selectedDados, setSelectedDados] = useState([0,1,2,3,4])
     let index = 0;
+
+    useEffect(() => {
+        if (dados.length === 0) {
+            setSelectedDados([0,1,2,3,4])
+        }
+    }, [dados])
 
     const handleClick = () => {
         if (!!tiros) {
@@ -28,7 +33,7 @@ const TirarDados = ({onClick, tiros}) => {
     const selectDado = (index) => {
         if (!!tiros) {
         setSelectedDados( prevState => [...prevState, index])
-        delete dados[index];
+        dados[index] = null;
         setDados(dados)
         }
     }
