@@ -33,17 +33,18 @@ const Generala = () => {
             <div className = "col-2 my-2 mx-2">
                 <TablaDePuntaje puntajes = {puntajes}/>
             </div>
-            {!turnos ? <PartidaFinalizada /> :
-            <div className = "col ">
+            <div className = "col"></div>
+            <div className = "col-4 my-2">
+                <SumarPuntaje onClick = {setPuntaje} dados = {dados} setError = {setError}/>
+            </div>
+        </div>
+        {!turnos ? <PartidaFinalizada /> :
+            <div className = "row ">
                 <Rondas tiros = {tiros} turnos = {turnos}/>
                 <TirarDados tiros = {tiros} onClick = {setTiros} dados = {dados} setDados = {setDados} setError = {setError}/>
                 {error && <Error error = {error}/>}
             </div>
-            }
-            <div className = "col-2 my-2">
-                <SumarPuntaje onClick = {setPuntaje} dados = {dados}/>
-            </div>
-        </div>
+        }
         </>
     )
 }

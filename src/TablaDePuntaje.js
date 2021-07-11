@@ -6,6 +6,8 @@ import './App.css';
 const TablaDePuntaje = ({puntajes}) => {
 
     return (
+        <div>
+        <h4 className = "text-white " >Puntajes</h4>
         <table className ="table table-success table-bordered tabla" >
             <thead >
                 <tr className ="" >
@@ -26,6 +28,7 @@ const TablaDePuntaje = ({puntajes}) => {
             <PuntajeTotal puntajes = {puntajes}/>
             </tbody>
         </table>
+        </div>
     )
 }
 
