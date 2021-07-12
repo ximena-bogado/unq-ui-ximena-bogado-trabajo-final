@@ -3,14 +3,106 @@
   background-color: rgb(38, 143, 91);
 }
 
-.tabla {
-  width: 180 px;
+.texto-cuadro {
+  color: rgb(80, 51, 16);
 }
 
 .cuadrado-2 {
   width: 50px; 
-  height: 50px; 
-  border: 1px solid #555;
+  height: 50px;
+  border: 1px solid rgb(92, 73, 56);
 }
 
+* {
+  box-sizing:inherit;
+}
+body {
+  padding: 0;
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+.contenedor {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+[class^="cara-"] {
+  background-color: rgb(246, 241, 241);
+  display: flex;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  margin: 1em;
+}
+
+.cara-1 {
+  justify-content: center;
+  align-items: center;
+}
+
+.cara-2 {
+  justify-content: space-between;
+}
+
+.cara-2 .punto:nth-child(2) {
+  align-self: flex-end;
+}
+
+.cara-3 {
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cara-3 .punto:nth-child(2) {
+  align-self: center;
+}
+
+.cara-3 .punto:nth-child(3) {
+  align-self: flex-end;
+}
+
+.cara-4 {
+  justify-content: space-between;
+}
+
+.cara-4 .columna {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cara-5 {
+  justify-content: space-between;
+}
+
+.cara-5 .columna {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cara-5 .medio {
+  align-self: center;
+}
+
+.cara-6 {
+  justify-content: space-between;
+}
+
+.cara-6 .columna {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.punto {
+  width: 8px;
+  height: 8px;
+  background-color: rgb(37, 34, 34);
+  border-radius: 50%;
+}
 

@@ -5,13 +5,14 @@ import Rondas from './Rondas';
 import SumarPuntaje from './SumarPuntaje';
 import Error from './Error';
 import PartidaFinalizada from './PartidaFinalizada';
+import generalaIcon from './resources/generala-icon.png'
 
 const Generala = () => {
 
     const [dados, setDados] = useState([])
     const [tiros, setTiros] = useState(3)
     const [error, setError] = useState("")
-    const [turnos, setTurnos] = useState(10)
+    const [turnos, setTurnos] = useState(9)
     const [puntajes, setPuntajes] = useState({ 1: null, 2: null, 3: null, 4 : null,5 : null,6 : null,"poker" : null, "full" : null, "escalera" : null })
 
     const setPuntaje = (categoria, puntaje) => {
@@ -22,7 +23,6 @@ const Generala = () => {
             setDados([])
             setError("")
         } else {
-            console.log("ya se ingreso ese puntaje")
             setError(`ya se ingreso puntaje para la categoria ${categoria}`)
         }
     }
@@ -30,10 +30,12 @@ const Generala = () => {
     return (
         <>
         <div className = "row">
-            <div className = "col-2 my-2 mx-2">
+            <div className = "col-4 my-2 mx-2">
                 <TablaDePuntaje puntajes = {puntajes}/>
             </div>
-            <div className = "col"></div>
+            <div className = "col">
+                <img src = {generalaIcon} width="80" className="mt-2" alt = "generala"/>
+            </div>
             <div className = "col-4 my-2">
                 <SumarPuntaje onClick = {setPuntaje} dados = {dados} setError = {setError}/>
             </div>

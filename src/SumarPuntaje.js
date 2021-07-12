@@ -12,7 +12,6 @@ const SumarPuntaje = ({onClick, dados, setError}) => {
     const handleSumarClick = (event) => {
         event.preventDefault();
         if (categoria) {
-            console.log(categoria, puntaje)
             onClick(categoria, puntaje)
             setCategoria(null)
             setPuntaje(null)

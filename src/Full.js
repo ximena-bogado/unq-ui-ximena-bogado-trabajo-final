@@ -9,20 +9,18 @@ const Full = ({dados, setCategoria, setPuntaje}) => {
         const numeros = [1,2,3,4,5,6]
         let resultado = false
         numeros.forEach(element => {
-            const result = dados.filter( dado => dado === element )
+            const result = dados.filter( dado => dado.numero === element )
             resultado = resultado || result.length === cantidad
         });
-        console.log(resultado)
         return(resultado)
     }
 
     const handleClick = (event) => {
         event.preventDefault();
+        setCategoria("full")
         if (esFull()) {
-            setCategoria("full")
             setPuntaje(30)
         } else {
-            setCategoria("full")
             setPuntaje(0)
         }
     }

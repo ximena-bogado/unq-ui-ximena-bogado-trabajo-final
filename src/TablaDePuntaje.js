@@ -7,12 +7,12 @@ const TablaDePuntaje = ({puntajes}) => {
 
     return (
         <div>
-        <h4 className = "text-white " >Puntajes</h4>
-        <table className ="table table-success table-bordered tabla" >
+        <h4 className = "text-white" >Puntajes</h4>
+        <table className ="table table-success table-bordered texto-cuadro" >
             <thead >
-                <tr className ="" >
-                    <th scope="col">Juegos</th>
-                    <th scope="col">Jugador</th>
+                <tr>
+                    <th >Juegos</th>
+                    <th >Jugador</th>
                 </tr>
             </thead>
             <tbody>

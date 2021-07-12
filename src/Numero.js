@@ -4,15 +4,12 @@ const Numero = ({dados, setCategoria, setPuntaje, numero}) => {
 
     const handleClick = (event) => {
         event.preventDefault();
-        //if (dados.includes(numero)) {
-            setCategoria(numero)
-            setPuntaje(calcularPuntaje())
-            console.log("se hizo el handleSelectClick")
-        //}
+        setCategoria(numero)
+        setPuntaje(calcularPuntaje())
     }
 
     const calcularPuntaje = () => {
-        const numerosAContar = dados.filter(dado => dado === numero)
+        const numerosAContar = dados.filter(dado => dado.numero === numero)
         return (numerosAContar.length * numero)
     }
 

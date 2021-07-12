@@ -5,20 +5,18 @@ const Escalera = ({dados, setCategoria, setPuntaje}) => {
         const escalera = [2,3,4,5]
         let esEscalera = true
         escalera.forEach(numero =>
-            esEscalera = esEscalera && dados.includes(numero)    
+            esEscalera = esEscalera && dados.some(dado => dado.numero === numero)    
         )
-        const contieneUnoOSeis = dados.includes(1) || dados.includes(6)
+        const contieneUnoOSeis = dados.some(dado => dado.numero === 1) || dados.some(dado => dado.numero === 6)
         return (esEscalera && contieneUnoOSeis)
     }
 
     const handleClick = (event) => {
         event.preventDefault();
-        console.log(esEscalera())
+        setCategoria("escalera")
         if (esEscalera()) {
-            setCategoria("escalera")
             setPuntaje(20)
         } else {
-            setCategoria("escalera")
             setPuntaje(0)
         }
     }
