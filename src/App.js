@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className = "App">
-    <div className="container vh-100" >
+    <div className = "container App min-vh-100">
       { jugando ?
       <Generala jugadoresInicial = {jugadores} setJugando = {setJugando}/>
       :<Inicio setJugadores = {setJugadores} setJugando = {setJugando}/>}

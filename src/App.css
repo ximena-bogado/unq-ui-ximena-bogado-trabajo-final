@@ -30,6 +30,10 @@ h1 {
   justify-content: center;
 }
 
+.puntero {
+  cursor: pointer;
+}
+
 [class^="cara-"] {
   background-color: rgb(246, 241, 241);
   display: flex;

@@ -30,10 +30,9 @@ const Generala = ({jugadoresInicial, setJugando}) => {
         }
     }
 
-    if (!jugadoresInicial.length) {return (<div>Cargando</div>)}
 
     return (
-        <>
+        <div className = "col">
         <div className = "row">
             <div className = "col-4 my-2 mx-2">
                 <TablaDePuntaje jugadores = {jugadores} />
@@ -46,14 +45,15 @@ const Generala = ({jugadoresInicial, setJugando}) => {
                 <SumarPuntaje onClick = {setPuntaje} dados = {dados} setError = {setError}/>
             </div>
         </div>
+        <div className = "row">
         {!jugadores[jugadoresInicial.length - 1].turnos ? <PartidaFinalizada setJugando = {setJugando}/> :
-            <div className = "row ">
+            <div className = "col">
                 <Rondas tiros = {tiros} turnos = {jugadores[jugadorActual].turnos}/>
                 <TirarDados tiros = {tiros} onClick = {setTiros} dados = {dados} setDados = {setDados} setError = {setError}/>
                 {error && <Error error = {error}/>}
             </div>
-        }
-        </>
+        }</div>
+        </div>
     )
 }
 

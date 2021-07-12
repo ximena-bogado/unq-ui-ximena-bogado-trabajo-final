@@ -8,7 +8,7 @@ const DadoEnMano = ({num, index, onClick}) => {
     }
 
     return (
-        <div className = {`cara-${num}`} onClick = {handleClick}>
+        <div className = {`cara-${num} puntero`} onClick = {handleClick}>
             <Dado num = {num}/>
         </div>
     )
