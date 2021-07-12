@@ -1,12 +1,20 @@
+import { useState } from 'react';
 import './App.css';
 import Generala from './Generala';
+import Inicio from './Inicio';
 
 
 function App() {
+
+  const [jugando, setJugando] = useState(false)
+  const [jugadores, setJugadores] = useState([])
+
   return (
     <div className = "App">
     <div className="container vh-100" >
-      <Generala />
+      { jugando ?
+      <Generala jugadoresInicial = {jugadores} setJugando = {setJugando}/>
+      :<Inicio setJugadores = {setJugadores} setJugando = {setJugando}/>}
     </div>
     </div>
   );

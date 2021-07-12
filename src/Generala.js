@@ -7,19 +7,22 @@ import Error from './Error';
 import PartidaFinalizada from './PartidaFinalizada';
 import generalaIcon from './resources/generala-icon.png'
 
-const Generala = () => {
+const Generala = ({jugadoresInicial, setJugando}) => {
 
     const [dados, setDados] = useState([])
     const [tiros, setTiros] = useState(3)
     const [error, setError] = useState("")
-    const [turnos, setTurnos] = useState(9)
-    const [puntajes, setPuntajes] = useState({ 1: null, 2: null, 3: null, 4 : null,5 : null,6 : null,"poker" : null, "full" : null, "escalera" : null })
+    const [jugadores, setJugadores] = useState(jugadoresInicial)
+    const [jugadorActual, setJugadorActual] = useState(0)
 
     const setPuntaje = (categoria, puntaje) => {
-        if (puntajes[categoria] === null){
-            setPuntajes(prevState => ({...prevState, [categoria]: puntaje}))
+
+        if (jugadores[jugadorActual].puntajes[categoria] === null){
+            jugadores[jugadorActual].puntajes[categoria] = puntaje
+            jugadores[jugadorActual].turnos = jugadores[jugadorActual].turnos - 1
+            setJugadores(jugadores)
+            setJugadorActual((jugadorActual + 1) % (jugadoresInicial.length))
             setTiros(3)
-            setTurnos(turnos - 1)
             setDados([])
             setError("")
         } else {
@@ -27,22 +30,25 @@ const Generala = () => {
         }
     }
 
+    if (!jugadoresInicial.length) {return (<div>Cargando</div>)}
+
     return (
         <>
         <div className = "row">
             <div className = "col-4 my-2 mx-2">
-                <TablaDePuntaje puntajes = {puntajes}/>
+                <TablaDePuntaje jugadores = {jugadores} />
             </div>
             <div className = "col">
                 <img src = {generalaIcon} width="80" className="mt-2" alt = "generala"/>
+                <p className = "text-white my-2"> <strong>Jugador actual:</strong> {jugadores[jugadorActual].nombre}</p>
             </div>
             <div className = "col-4 my-2">
                 <SumarPuntaje onClick = {setPuntaje} dados = {dados} setError = {setError}/>
             </div>
         </div>
-        {!turnos ? <PartidaFinalizada /> :
+        {!jugadores[jugadoresInicial.length - 1].turnos ? <PartidaFinalizada setJugando = {setJugando}/> :
             <div className = "row ">
-                <Rondas tiros = {tiros} turnos = {turnos}/>
+                <Rondas tiros = {tiros} turnos = {jugadores[jugadorActual].turnos}/>
                 <TirarDados tiros = {tiros} onClick = {setTiros} dados = {dados} setDados = {setDados} setError = {setError}/>
                 {error && <Error error = {error}/>}
             </div>

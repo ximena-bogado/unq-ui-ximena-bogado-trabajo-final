@@ -3,7 +3,7 @@ import Puntaje from "./Puntaje";
 import PuntajeTotal from "./PuntajeTotal";
 import './App.css';
 
-const TablaDePuntaje = ({puntajes}) => {
+const TablaDePuntaje = ({jugadores}) => {
 
     return (
         <div>
@@ -12,20 +12,20 @@ const TablaDePuntaje = ({puntajes}) => {
             <thead >
                 <tr>
                     <th >Juegos</th>
-                    <th >Jugador</th>
+                    {jugadores.map(jugador => <th key = {`jugadores-${jugador.nombre}`}>{jugador.nombre}</th>)}
                 </tr>
             </thead>
             <tbody>
-            <Puntaje name = {1} puntaje = {puntajes[1]}/>
-            <Puntaje name = {2} puntaje = {puntajes[2]}/>
-            <Puntaje name = {3} puntaje = {puntajes[3]}/>
-            <Puntaje name = {4} puntaje = {puntajes[4]}/>
-            <Puntaje name = {5} puntaje = {puntajes[5]}/>
-            <Puntaje name = {6} puntaje = {puntajes[6]}/>
-            <Puntaje name = {"Poker"} puntaje = {puntajes["poker"]}/>
-            <Puntaje name = {"Full"} puntaje = {puntajes["full"]}/>
-            <Puntaje name = {"Escalera"} puntaje = {puntajes["escalera"]}/>
-            <PuntajeTotal puntajes = {puntajes}/>
+            <Puntaje name = {1} jugadores = {jugadores}/>
+            <Puntaje name = {2} jugadores = {jugadores}/>
+            <Puntaje name = {3} jugadores = {jugadores}/>
+            <Puntaje name = {4} jugadores = {jugadores}/>
+            <Puntaje name = {5} jugadores = {jugadores}/>
+            <Puntaje name = {6} jugadores = {jugadores}/>
+            <Puntaje name = {"Poker"} jugadores = {jugadores}/>
+            <Puntaje name = {"Full"} jugadores = {jugadores}/>
+            <Puntaje name = {"Escalera"} jugadores = {jugadores}/>
+            <PuntajeTotal jugadores = {jugadores}/>
             </tbody>
         </table>
         </div>

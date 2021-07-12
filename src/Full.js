@@ -17,7 +17,7 @@ const Full = ({dados, setCategoria, setPuntaje}) => {
 
     const handleClick = (event) => {
         event.preventDefault();
-        setCategoria("full")
+        setCategoria("Full")
         if (esFull()) {
             setPuntaje(30)
         } else {

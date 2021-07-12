@@ -13,7 +13,7 @@ const Poker = ({dados, setCategoria, setPuntaje}) => {
 
     const handleClick = (event) => {
         event.preventDefault();
-        setCategoria("poker")
+        setCategoria("Poker")
         if (esPoker()) {
             setPuntaje(40)
         } else {

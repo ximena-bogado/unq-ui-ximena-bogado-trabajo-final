@@ -13,7 +13,7 @@ const Escalera = ({dados, setCategoria, setPuntaje}) => {
 
     const handleClick = (event) => {
         event.preventDefault();
-        setCategoria("escalera")
+        setCategoria("Escalera")
         if (esEscalera()) {
             setPuntaje(20)
         } else {
