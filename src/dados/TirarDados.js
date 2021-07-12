@@ -52,23 +52,21 @@ const TirarDados = ({onClick, tiros, dados, setDados, setError}) => {
     return (
         <div className = "row">
             <div className = "row" >
-            <div className = "col-4">
-            
-            <div className = "contenedor">
-                {dadosEnMano.map( dado => <DadoEnMano key = {`dado-${dado.index}`} num = {dado.numero} index = {dado.index} onClick = {selectDado}/>)}
-            </div>
-            </div>
-            <div className = "col">
-            <div className = "my-2">
-            <button type="button" className="btn btn-secondary" onClick = {handleClick} >Tirar dados</button>
-            </div>
-            
-            </div>
-            <div className = "col-4">
-            <div className = "contenedor">
-            {dadosApartados.map( dado => <DadoApartado key = {`dado-${dado.index}`} num = {dado.numero} index = {dado.index} onClick = {selectDado}/>)}
-            </div>
-            </div>
+                <div className = "col-4">
+                    <div className = "contenedor">
+                        {dadosEnMano.map( dado => <DadoEnMano key = {`dado-${dado.index}`} num = {dado.numero} index = {dado.index} onClick = {selectDado}/>)}
+                    </div>
+                </div>
+                <div className = "col">
+                    <div className = "my-2">
+                        <button type="button" className="btn btn-secondary " onClick = {handleClick} >Tirar dados</button>
+                    </div>
+                </div>
+                <div className = "col-4">
+                    <div className = "contenedor">
+                        {dadosApartados.map( dado => <DadoApartado key = {`dado-${dado.index}`} num = {dado.numero} index = {dado.index} onClick = {selectDado}/>)}
+                    </div>
+                </div>
             </div>
         </div>
     )

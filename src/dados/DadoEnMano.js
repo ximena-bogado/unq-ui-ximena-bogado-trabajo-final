@@ -1,4 +1,3 @@
-import './App.css';
 import Dado from './Dado';
 
 const DadoEnMano = ({num, index, onClick}) => {

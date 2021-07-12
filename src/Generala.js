@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import TablaDePuntaje from './TablaDePuntaje';
-import TirarDados from './TirarDados';
+import TablaDePuntaje from './tabla/TablaDePuntaje';
+import TirarDados from './dados/TirarDados';
 import Rondas from './Rondas';
-import SumarPuntaje from './SumarPuntaje';
+import SumarPuntaje from './sumarPuntaje/SumarPuntaje';
 import Error from './Error';
 import PartidaFinalizada from './PartidaFinalizada';
 import generalaIcon from './resources/generala-icon.png'

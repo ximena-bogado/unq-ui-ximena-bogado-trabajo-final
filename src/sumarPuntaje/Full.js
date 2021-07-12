@@ -26,7 +26,7 @@ const Full = ({dados, setCategoria, setPuntaje}) => {
     }
 
     return (
-        <button type = "button" className = "text-white border-white btn btn-outline-secondary mb-2" onClick = {handleClick}>Full</button> 
+        <button type = "button" className = "text-white border-white btn btn-outline-secondary mb-2 " onClick = {handleClick}>Full</button> 
     )
 }
 

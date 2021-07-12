@@ -1,7 +1,6 @@
 import React from "react";
 import Puntaje from "./Puntaje";
 import PuntajeTotal from "./PuntajeTotal";
-import './App.css';
 
 const TablaDePuntaje = ({jugadores}) => {
 
