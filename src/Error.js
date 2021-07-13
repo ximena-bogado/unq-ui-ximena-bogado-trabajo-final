@@ -2,7 +2,7 @@
 const Error = ({error}) => {
 
     return (
-        <div className ="alert alert-success mx-auto my-4" role="alert">
+        <div className ="dialogo alert alert-success" role="alert">
             {error}
         </div>
     )

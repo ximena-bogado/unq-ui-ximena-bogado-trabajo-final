@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"
 import DadoEnMano from "./DadoEnMano"
 import DadoApartado from "./DadoApartado"
+import cubilete from '../resources/cubilete.png'
+import Rondas from '../Rondas';
 
-const TirarDados = ({onClick, tiros, dados, setDados, setError}) => {
+const TirarDados = ({onClick, tiros, dados, setDados, setError, turnos}) => {
 
     const [selectedDados, setSelectedDados] = useState([0,1,2,3,4])
     const [dadosApartados, setDadosApartados] = useState([])
@@ -50,25 +52,26 @@ const TirarDados = ({onClick, tiros, dados, setDados, setError}) => {
     }
 
     return (
-        <div className = "row">
-            <div className = "row" >
-                <div className = "col-4">
-                    <div className = "contenedor">
-                        {dadosEnMano.map( dado => <DadoEnMano key = {`dado-${dado.index}`} num = {dado.numero} index = {dado.index} onClick = {selectDado}/>)}
-                    </div>
+        <>
+            <div className = "dados-en-mano">  
+                <div>
+                    <img src = {cubilete} width="70" className="mt-2" alt = "generala"/>
                 </div>
-                <div className = "col">
-                    <div className = "my-2">
-                        <button type="button" className="btn btn-secondary " onClick = {handleClick} >Tirar dados</button>
-                    </div>
-                </div>
-                <div className = "col-4">
-                    <div className = "contenedor">
-                        {dadosApartados.map( dado => <DadoApartado key = {`dado-${dado.index}`} num = {dado.numero} index = {dado.index} onClick = {selectDado}/>)}
-                    </div>
+                <div className = "contenedor">
+                    {dadosEnMano.map( dado => <DadoEnMano key = {`dado-${dado.index}`} num = {dado.numero} index = {dado.index} onClick = {selectDado}/>)}
                 </div>
             </div>
-        </div>
+            <div className = "tirar-dados my-2">
+                <Rondas tiros = {tiros} turnos = {turnos}/>
+                <button type="button" className="btn btn-secondary " onClick = {handleClick} >Tirar dados</button>
+            </div>
+            <div className = "dados-apartados">
+                <p className = "mt-4 text-white"> <strong>Dados apartados:</strong></p>
+                <div className = "contenedor">
+                {dadosApartados.map( dado => <DadoApartado key = {`dado-${dado.index}`} num = {dado.numero} index = {dado.index} onClick = {selectDado}/>)}
+                </div>
+            </div>
+        </>
     )
 }
 

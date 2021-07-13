@@ -10,12 +10,10 @@ function App() {
   const [jugadores, setJugadores] = useState([])
 
   return (
-    <div className = "App">
-    <div className = "container App min-vh-100">
+    <div className = "App conteiner-p conteiner-m">
       { jugando ?
       <Generala jugadoresInicial = {jugadores} setJugando = {setJugando}/>
       :<Inicio setJugadores = {setJugadores} setJugando = {setJugando}/>}
-    </div>
     </div>
   );
 }

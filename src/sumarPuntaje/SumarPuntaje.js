@@ -22,8 +22,9 @@ const SumarPuntaje = ({onClick, dados, setError}) => {
     }
 
     return (
-        <div className="col btn-group-vertical">
-            <h4 className = "text-white">Categorias</h4>
+        <>
+        <h4 className = "text-white">Categorias</h4>
+        <div className="btn-group-vertical">
             <Numero dados = {dados} setCategoria = {setCategoria} setPuntaje = {setPuntaje} numero = {1}/>
             <Numero dados = {dados} setCategoria = {setCategoria} setPuntaje = {setPuntaje} numero = {2}/>
             <Numero dados = {dados} setCategoria = {setCategoria} setPuntaje = {setPuntaje} numero = {3}/>
@@ -37,6 +38,7 @@ const SumarPuntaje = ({onClick, dados, setError}) => {
                     Sumar puntaje
                 </button>
         </div>
+        </>
     )
 }
 

@@ -28,11 +28,11 @@ const Inicio = ({setJugadores, setJugando}) => {
     }
 
     return (
-        <div className = "col">
-            <div className = "col">
-            <img src = {generalaIcon} width="25%" className="my-4" alt = "generala"/>
+        <div className = "inicio">
+            <div >
+            <img src = {generalaIcon} width="300px" className="my-4" alt = "generala"/>
             </div>
-            <div className = "col">
+            <div>
             <button type="button" className="btn btn-secondary my-4 mx-2" onClick = {handleClick(1)}>Solitario</button>
             <button type="button" className="btn btn-secondary my-4 mx-2" onClick = {handleClick(2)}>Dos jugadores</button>
             </div>

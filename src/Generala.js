@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import TablaDePuntaje from './tabla/TablaDePuntaje';
 import TirarDados from './dados/TirarDados';
-import Rondas from './Rondas';
 import SumarPuntaje from './sumarPuntaje/SumarPuntaje';
 import Error from './Error';
 import PartidaFinalizada from './PartidaFinalizada';
@@ -32,28 +31,28 @@ const Generala = ({jugadoresInicial, setJugando}) => {
 
 
     return (
-        <div className = "col">
-        <div className = "row">
-            <div className = "col-4 my-2 mx-2">
+        <>
+        <>
+            <div className = "tabla my-2 mx-2">
                 <TablaDePuntaje jugadores = {jugadores} />
             </div>
-            <div className = "col">
+            <div className = "centro">
                 <img src = {generalaIcon} width="80" className="mt-2" alt = "generala"/>
                 <p className = "text-white my-2"> <strong>Jugador actual:</strong> {jugadores[jugadorActual].nombre}</p>
             </div>
-            <div className = "col-4 my-2">
+            <div className = "sumar-puntaje my-2">
                 <SumarPuntaje onClick = {setPuntaje} dados = {dados} setError = {setError}/>
             </div>
-        </div>
-        <div className = "row">
+        </>
+        <>
         {!jugadores[jugadoresInicial.length - 1].turnos ? <PartidaFinalizada setJugando = {setJugando}/> :
-            <div className = "col">
-                <Rondas tiros = {tiros} turnos = {jugadores[jugadorActual].turnos}/>
-                <TirarDados tiros = {tiros} onClick = {setTiros} dados = {dados} setDados = {setDados} setError = {setError}/>
+            <>
+                
+                <TirarDados tiros = {tiros} onClick = {setTiros} dados = {dados} setDados = {setDados} setError = {setError} turnos = {jugadores[jugadorActual].turnos}/>
                 {error && <Error error = {error}/>}
-            </div>
-        }</div>
-        </div>
+            </>
+        }</>
+        </>
     )
 }
 
