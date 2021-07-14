@@ -16,7 +16,7 @@ const SumarPuntaje = ({onClick, dados, setError}) => {
             setCategoria(null)
             setPuntaje(null)
         }else {
-            setError("No se selecciono ninguna categoria. Seleccione una categoria para sumar el puntaje")
+            setError("No se selecciono ninguna categoría. Seleccione una categoría para sumar el puntaje")
         }
         
     }
@@ -33,7 +33,7 @@ const SumarPuntaje = ({onClick, dados, setError}) => {
             <Poker dados = {dados} setCategoria = {setCategoria} setPuntaje = {setPuntaje} />
             <Full dados = {dados} setCategoria = {setCategoria} setPuntaje = {setPuntaje} />
             <Escalera dados = {dados} setCategoria = {setCategoria} setPuntaje = {setPuntaje} />
-                <button type = "button" className = "boton texto-botones btn btn-secondary mb-2 " onClick = {handleSumarClick}>
+                <button type = "button" className = "texto-botones btn btn-secondary mb-2 " onClick = {handleSumarClick}>
                     Sumar
                 </button>
         </div>

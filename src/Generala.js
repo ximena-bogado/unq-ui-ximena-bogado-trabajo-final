@@ -4,7 +4,7 @@ import TirarDados from './dados/TirarDados';
 import SumarPuntaje from './sumarPuntaje/SumarPuntaje';
 import Error from './Error';
 import PartidaFinalizada from './PartidaFinalizada';
-import generalaIcon from './resources/generala-icon.png'
+import Barra from './Barra';
 
 const Generala = ({jugadoresInicial, setJugando}) => {
 
@@ -24,17 +24,14 @@ const Generala = ({jugadoresInicial, setJugando}) => {
             setDados([])
             setError("")
         } else {
-            setError(`ya se ingreso puntaje para la categoria ${categoria}`)
+            setError(`ya se ingreso puntaje para la categoría ${categoria}`)
         }
     }
 
 
     return (
         <>
-            <img src = {generalaIcon} className="icon mt-2" alt = "generala"/>
-            <h4 className = "barra-izquierda texto" >Puntajes</h4>
-            <span className = "centro texto-centro"> <strong> Jugador actual:</strong> {jugadores[jugadorActual].nombre}</span>
-            <h4 className = "barra-derecha texto">Categorias</h4>
+            <Barra nombre = {jugadores[jugadorActual].nombre}/>
             <div className = "tabla">
                 <TablaDePuntaje jugadores = {jugadores} />
             </div>

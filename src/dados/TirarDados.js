@@ -38,9 +38,9 @@ const TirarDados = ({onClick, tiros, dados, setDados, setError, turnos}) => {
 
     const chooseAndSetError = () => {
         if (!tiros) {
-            setError("Ya no quedan tiradas. Seleccione una categoria y sume los puntos");
+            setError("Ya no quedan tiradas. Seleccione una categoría y sume los puntos");
         } else {
-            setError("No se seleccionaron dados");
+            setError("Ya se apartaron todos los dados. Seleccione una categoría y sume los puntos");
         }
     }
 
@@ -55,7 +55,7 @@ const TirarDados = ({onClick, tiros, dados, setDados, setError, turnos}) => {
         setDadosApartados( prevState => [...prevState, dadoSeleccionado])
         setDadosEnMano(dadosEnMano.filter(dado => dado.index !== index))
         }else {
-            setError("Ya no quedan tiradas. Seleccione una categoria y sume los puntos")
+            setError("Ya no quedan tiradas. Seleccione una categoría y sume los puntos")
         }
     }
 
@@ -71,7 +71,7 @@ const TirarDados = ({onClick, tiros, dados, setDados, setError, turnos}) => {
             </div>
             <div className = "tirar-dados my-2">
                 <Rondas tiros = {tiros} turnos = {turnos}/>
-                <button type="button" className="btn btn-secondary" onClick = {handleClick} > <label className = "texto-botones">Tirar</label></button>
+                <button type="button" className="col-8 btn btn-secondary shadow-lg" onClick = {handleClick} >Tirar</button>
             </div>
             <div className = "dados-apartados">
                 <p className = "mt-4 texto-estadisticas"> Dados apartados:</p>

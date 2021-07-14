@@ -14,7 +14,7 @@ const Numero = ({dados, setCategoria, setPuntaje, numero}) => {
     }
 
     return (
-        <button type = "button" className = "boton border-white btn btn-outline-secondary mb-2 " onClick = {handleClick}> <label className = "texto-botones ">{numero} </label></button>
+        <button type = "button" className = "border-white texto-botones btn btn-outline-secondary mb-2 " onClick = {handleClick}> {numero} </button>
     )
 }
 

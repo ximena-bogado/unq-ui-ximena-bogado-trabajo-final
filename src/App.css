@@ -105,7 +105,7 @@
     grid-column: 6/7;
     margin-top: 5px;
     display: flex;
-    justify-self: center;
+    flex-direction: row-reverse;
   }
 
   .centro {
