@@ -32,7 +32,15 @@ const TirarDados = ({onClick, tiros, dados, setDados, setError, turnos}) => {
             onClick(prevState => prevState - 1)
             setError("")
         } else {
-            setError("No se seleccionaron dados")
+            chooseAndSetError();
+        }
+    }
+
+    const chooseAndSetError = () => {
+        if (!tiros) {
+            setError("Ya no quedan tiradas. Seleccione una categoria y sume los puntos");
+        } else {
+            setError("No se seleccionaron dados");
         }
     }
 
@@ -55,7 +63,7 @@ const TirarDados = ({onClick, tiros, dados, setDados, setError, turnos}) => {
         <>
             <div className = "dados-en-mano">  
                 <div>
-                    <img src = {cubilete} width="70" className="mt-2" alt = "generala"/>
+                    <img src = {cubilete} className="cubilete mt-2" alt = "generala"/>
                 </div>
                 <div className = "contenedor">
                     {dadosEnMano.map( dado => <DadoEnMano key = {`dado-${dado.index}`} num = {dado.numero} index = {dado.index} onClick = {selectDado}/>)}
@@ -63,12 +71,12 @@ const TirarDados = ({onClick, tiros, dados, setDados, setError, turnos}) => {
             </div>
             <div className = "tirar-dados my-2">
                 <Rondas tiros = {tiros} turnos = {turnos}/>
-                <button type="button" className="btn btn-secondary " onClick = {handleClick} >Tirar dados</button>
+                <button type="button" className="btn btn-secondary" onClick = {handleClick} > <label className = "texto-botones">Tirar</label></button>
             </div>
             <div className = "dados-apartados">
-                <p className = "mt-4 text-white"> <strong>Dados apartados:</strong></p>
+                <p className = "mt-4 texto-estadisticas"> Dados apartados:</p>
                 <div className = "contenedor">
-                {dadosApartados.map( dado => <DadoApartado key = {`dado-${dado.index}`} num = {dado.numero} index = {dado.index} onClick = {selectDado}/>)}
+                    {dadosApartados.map( dado => <DadoApartado key = {`dado-${dado.index}`} num = {dado.numero} index = {dado.index} onClick = {selectDado}/>)}
                 </div>
             </div>
         </>
@@ -76,3 +84,5 @@ const TirarDados = ({onClick, tiros, dados, setDados, setError, turnos}) => {
 }
 
 export default TirarDados;
+
+

@@ -1,15 +1,14 @@
-import cubilete from './resources/cubilete.png'
 
 const Rondas = ({tiros, turnos}) => {
 
     return (
         <>
-        <div className = "text-white mt-2">
+        <div className = "texto-estadisticas mt-2">
             <p>
-                <strong>Turnos restantes: {turnos}</strong>
+                Turnos restantes: {turnos}
             </p>
             <p>
-                <strong>Tiradas restantes: {tiros}</strong>
+                Tiradas restantes: {tiros}
             </p>
         </div>
         </>

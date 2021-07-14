@@ -6,7 +6,6 @@ const TablaDePuntaje = ({jugadores}) => {
 
     return (
         <div>
-        <h4 className = "text-white" >Puntajes</h4>
         <table className ="table table-success table-bordered texto-cuadro" >
             <thead >
                 <tr>
