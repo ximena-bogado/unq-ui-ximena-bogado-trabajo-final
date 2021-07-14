@@ -22,8 +22,7 @@ const SumarPuntaje = ({onClick, dados, setError}) => {
     }
 
     return (
-        <>
-        <div className="btn-group-vertical">
+        <div className="sumar-puntaje btn-group-vertical">
             <Numero dados = {dados} setCategoria = {setCategoria} setPuntaje = {setPuntaje} numero = {1}/>
             <Numero dados = {dados} setCategoria = {setCategoria} setPuntaje = {setPuntaje} numero = {2}/>
             <Numero dados = {dados} setCategoria = {setCategoria} setPuntaje = {setPuntaje} numero = {3}/>
@@ -33,11 +32,10 @@ const SumarPuntaje = ({onClick, dados, setError}) => {
             <Poker dados = {dados} setCategoria = {setCategoria} setPuntaje = {setPuntaje} />
             <Full dados = {dados} setCategoria = {setCategoria} setPuntaje = {setPuntaje} />
             <Escalera dados = {dados} setCategoria = {setCategoria} setPuntaje = {setPuntaje} />
-                <button type = "button" className = "texto-botones btn btn-secondary mb-2 " onClick = {handleSumarClick}>
-                    Sumar
-                </button>
+            <button type = "button" className = "texto-botones btn btn-secondary mb-2 " onClick = {handleSumarClick}>
+                Sumar
+            </button>
         </div>
-        </>
     )
 }
 

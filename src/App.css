@@ -5,9 +5,8 @@
   background-color: rgb(38, 143, 91);
 }
 
-
 @media only screen and (min-width: 900px) {
-  .conteiner-p {
+  .contenedor-p {
     display: grid;
     grid-template-columns: 15% 25% 20% 25% 15%;
     grid-template-rows: 5% 55% 32% 8%;
@@ -41,6 +40,8 @@
 
   .sumar-puntaje {
     grid-column: 4/5;
+    width: 70%;
+    justify-self: center;
   }
 
   .dados-apartados {
@@ -64,7 +65,7 @@
   }
 
   .inicio {
-    grid-column: 1/6;
+    grid-column: 2/5;
   }
 
   .cubilete {
@@ -79,11 +80,11 @@
     padding: 5px;
     margin: 3px;
     border-radius: 5px;
-  } 
+  }
 }
 
 @media only screen and (max-width: 899px) {
-  .conteiner-p {
+  .contenedor-p {
     display: grid;
     grid-template-columns: 30% 10% 10% 10% 10% 30%;
     grid-template-rows: 5% 55% 25% 12%;
@@ -105,7 +106,6 @@
     grid-column: 6/7;
     margin-top: 5px;
     display: flex;
-    flex-direction: row-reverse;
   }
 
   .centro {
@@ -114,15 +114,16 @@
 
   .tabla {
     grid-column: 1/4;
-    display: flex;
+    width: 70%;
     margin-left: 5px;
   }
 
   .sumar-puntaje {
     grid-column: 4/7;
-    display: flex;
+    width: 50%;
     justify-self: right;
     margin-right: 30px;
+    margin-left: 30px;
     margin-top: 10px;
   }
 
@@ -202,7 +203,7 @@
 }
 
 .texto-cuadro {
-  color: rgb(39, 39, 39);
+  color: rgb(59, 50, 50);
 }
 
 .texto-botones {

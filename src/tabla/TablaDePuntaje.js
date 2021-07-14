@@ -5,7 +5,7 @@ import PuntajeTotal from "./PuntajeTotal";
 const TablaDePuntaje = ({jugadores}) => {
 
     return (
-        <div>
+        <div className = "tabla">
         <table className ="table table-success table-bordered texto-cuadro" >
             <thead >
                 <tr>

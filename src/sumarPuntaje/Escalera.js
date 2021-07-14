@@ -22,7 +22,7 @@ const Escalera = ({dados, setCategoria, setPuntaje}) => {
     }
 
     return (
-        <button type = "button" className = "boton texto-botones border-white btn btn-outline-secondary mb-2 "onClick = {handleClick}>Escalera</button>
+        <button type = "button" className = "texto-botones border-white btn btn-outline-secondary mb-2 "onClick = {handleClick}>Escalera</button>
     )
 }
 

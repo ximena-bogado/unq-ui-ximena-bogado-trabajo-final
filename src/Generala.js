@@ -32,13 +32,10 @@ const Generala = ({jugadoresInicial, setJugando}) => {
     return (
         <>
             <Barra nombre = {jugadores[jugadorActual].nombre}/>
-            <div className = "tabla">
-                <TablaDePuntaje jugadores = {jugadores} />
-            </div>
-            <div className = "sumar-puntaje">
-                <SumarPuntaje onClick = {setPuntaje} dados = {dados} setError = {setError}/>
-            </div>
-            {!jugadores[jugadoresInicial.length - 1].turnos ? <PartidaFinalizada setJugando = {setJugando}/> :
+            <TablaDePuntaje jugadores = {jugadores} />
+            <SumarPuntaje onClick = {setPuntaje} dados = {dados} setError = {setError}/>
+            {!jugadores[jugadoresInicial.length - 1].turnos ?
+                <PartidaFinalizada setJugando = {setJugando}/> :
                 <>
                     <TirarDados tiros = {tiros} onClick = {setTiros} dados = {dados} setDados = {setDados} setError = {setError} turnos = {jugadores[jugadorActual].turnos}/>
                     {error && <Error error = {error}/>}

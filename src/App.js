@@ -10,7 +10,7 @@ function App() {
   const [jugadores, setJugadores] = useState([])
 
   return (
-    <div className = "App conteiner-p conteiner-m">
+    <div className = "App contenedor-p">
       { jugando ?
       <Generala jugadoresInicial = {jugadores} setJugando = {setJugando}/>
       :<Inicio setJugadores = {setJugadores} setJugando = {setJugando}/>}

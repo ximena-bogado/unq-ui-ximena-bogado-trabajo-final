@@ -2,7 +2,6 @@
 const Rondas = ({tiros, turnos}) => {
 
     return (
-        <>
         <div className = "texto-estadisticas mt-2">
             <p>
                 Turnos restantes: {turnos}
@@ -11,7 +10,6 @@ const Rondas = ({tiros, turnos}) => {
                 Tiradas restantes: {tiros}
             </p>
         </div>
-        </>
     )
 }
 
