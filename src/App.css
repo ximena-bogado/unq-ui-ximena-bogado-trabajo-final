@@ -87,7 +87,7 @@
   .contenedor-p {
     display: grid;
     grid-template-columns: 30% 10% 10% 10% 10% 30%;
-    grid-template-rows: 5% 55% 25% 12%;
+    grid-template-rows: 5% 57% 25% 13%;
     justify-content: center;
   }
 
@@ -144,7 +144,7 @@
   }
  
   .partida-finalizada {
-    grid-column: 1/5;
+    grid-column: 1/7;
   }
 
   .inicio {
