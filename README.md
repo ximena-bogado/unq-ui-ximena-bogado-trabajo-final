@@ -10,4 +10,5 @@ Es necesario instalar Node.js para ejecutar el proyecto
 
 Una vez clonado el repositorio, posicionarse en la carpeta del proyecto e ingresar por consola los siguientes comandos:
 
+- npm install
 - npm start
